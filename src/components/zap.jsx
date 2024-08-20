@@ -3,13 +3,14 @@ import React from 'react'
 export default function Card({index,card}){
 
     const [Cor, setCor] = React.useState("")
-    const [Carta, setCarta] = React.useState(flashcard(index,Cor))
+    const [Bol, setBol] = React.useState(true)
+    const [Carta, setCarta] = React.useState(flashcard(index,Cor,Bol))
 
-    function flashcard(index, Cor){
+    function flashcard(index, Cor, Bol){
         return (
             <>
                 <div Cor={Cor}>Pergunta {index + 1}</div>
-                <img onClick={()=>setCarta(Zap(card))} src="src/assets/seta_play.png" alt="play" />
+                <img onClick={()=>Bol?setCarta(Zap(card)):""} src="src/assets/seta_play.png" alt="play" />
             </>
         )
     }
@@ -28,11 +29,10 @@ export default function Card({index,card}){
             <>
                 <p1>{card.answer}</p1>
                 <div>
-                    <img onClick={() => Zap(index, "green")} src="src/assets/icone_certo.png" alt="virar" />
-                    <img onClick={() => Zap(index, "red")} src="src/assets/icone_erro.png" alt="virar" />
-                    <img onClick={() => Zap(index, "yellow")} src="src/assets/icone_quase.png" alt="virar" />
+                    <img onClick={() => setCarta(flashcard(index, setCor("green"), setBol(false)))} src="src/assets/icone_certo.png" alt="certo" />
+                    <img onClick={() => setCarta(flashcard(index, setCor("red"), setBol(false)))} src="src/assets/icone_erro.png" alt="erro" />
+                    <img onClick={() => setCarta(flashcard(index, setCor("yellow"), setBol(false)))} src="src/assets/icone_quase.png" alt="quase" />
                 </div>
-
             </>
         )
     }

@@ -1,4 +1,5 @@
-
+import React from 'react'
+import Card from "./zap.jsx"
 
 export default function Carta() {
     const cards = [
@@ -13,19 +14,12 @@ export default function Carta() {
     ]
 
     return (
-        cards.map((card, index) =>
+        cards.map((card, index) =>(
             <div className="card" key={index}>
-                <Card index={index} card={card}/>
+                <Card index={index} card={card} />
             </div>
         )
-    )
+    ))
 }
 
-function Card(props) {
-    return (
-        <>
-            <p1>Pergunta {props.index + 1}</p1>
-            <img src="src/assets/seta_play.png" alt="play" />
-        </>
-    )
-}
+

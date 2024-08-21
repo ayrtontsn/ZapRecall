@@ -27,22 +27,6 @@ header img{
     margin-bottom: 100px;
 }
 
-.card{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #Ffffff;
-    border-radius: 5px;
-    padding: 23px 10px;
-    margin: 25px 0;
-    
-}
-
-p1{
-    background: #Ffffff;
-    font-weight: bolder;
-}
-
 footer{
     display: flex;
     align-items: center;

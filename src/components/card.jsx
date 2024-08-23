@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from "./zap.jsx"
+import Zap from "./zap.jsx"
 
 export default function Carta() {
     const cards = [
@@ -11,12 +11,12 @@ export default function Carta() {
         { question: "Usamos o npm para __", answer: "Gerenciar os pacotes necessários e suas dependências" },
         { question: "Usamos props para __", answer: "Passar diferentes informações para componentes" },
         { question: "Usamos estado (state) para __", answer: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" }
-    ]
+        ]
 
     return (
         cards.map((card, index) =>(
-            <div className="card" key={index}>
-                <Card index={index} card={card} />
+            <div key={index}>
+                <Zap index={index} card={card} />
             </div>
         )
     ))

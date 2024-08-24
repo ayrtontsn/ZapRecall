@@ -3,31 +3,16 @@ import styled from 'styled-components';
 import Flashcard from './flashcard.jsx';
 
 export default function Zap({index, card}) {
-    const [Cor, setCor] = React.useState("blue");
+    const [Cor, setCor] = React.useState("");
     const [Imagem, setImagem] = React.useState("src/assets/seta_play.png");
     const [Carta, setCarta] = React.useState(() => (
     <Container>
-        <Texto cor={Cor} >Pergunta {index + 1}</Texto>
+        <Texto collor={Cor} >Pergunta {index + 1}</Texto>
         <img
-        onClick={() => Cor==="blue" ? setCarta(Flashcard(card,setCarta, index, setCor, setImagem,Question, Cor, Imagem)) : ""}
+        onClick={() => Cor==="" ? setCarta(Flashcard(card, index, setCarta)) : ""}
         src={Imagem}
         alt="play" />
-    </Container>));  
-
-
-    function Question(index, Cor, Imagem) {
-        console.log(Cor)
-        return (
-            <Container>
-                <Texto cor={Cor} >Pergunta {index + 1}</Texto>
-                <img
-                onClick={() => Cor==="blue" ? setCarta(Flashcard(card,setCarta, index, setCor, setImagem,Question, Cor, Imagem)) : ""}
-                src={Imagem}
-                alt="play" />
-            </Container>
-        )
-    }
-    
+    </Container>));     
     
     return (
         <>
@@ -56,5 +41,5 @@ const Texto = styled.p`
     line-height: 19.2px;
     text-align: left;
 
-    color: ${props => props.cor};
+    color: ${props => props.collor};
 `

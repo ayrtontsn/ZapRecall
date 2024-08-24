@@ -1,23 +1,31 @@
 import React from 'react'
 import styled from 'styled-components';
 
-export default function Answer(card, setCarta, index, setCor, setImagem, Question, Cor, Imagem) {
+export default function Answer(card, index, setCarta) {
     const collors = [
-        { cor: "#FF3030", imagem: "src/assets/icone_erro.png", frase: "Quase não lembrei" },
-        { cor: "#FF922E", imagem: "src/assets/icone_quase.png", frase: "Não lembrei" },
+        { cor: "#FF3030", imagem: "src/assets/icone_erro.png", frase: "Não lembrei" },
+        { cor: "#FF922E", imagem: "src/assets/icone_quase.png", frase: "Quase não lembrei" },
         { cor: "#2FBE34", imagem: "src/assets/icone_certo.png", frase: "ZAP!" }
     ]
-    function click(cor,imagem){
-        setCor(cor)
-        setImagem(imagem)
 
+    function Question(index, cor, img) {
+        
+        return (
+            <Container>
+                <Texto collor={cor} >Pergunta {index + 1}</Texto>
+                <img
+                src={img}
+                alt="play" />
+            </Container>
+        )
     }
 
     function Botao() {
         return(
         collors.map((item,ind) => (
-                <Botaocss key={ind} cor={item.cor} onClick={() => (setCarta(Question(index)),
-                click(item.cor,item.imagem))}>
+                <Botaocss key={ind} cor={item.cor} onClick={() => (
+                    setCarta(Question(index, item.cor, item.imagem))
+                )}>
                     {item.frase}
                 </Botaocss>
     )))
@@ -91,3 +99,28 @@ const Botaocss = styled.button`
     color:white;
 
 `;
+
+const Container = styled.div`
+
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background: #Ffffff;
+    border-radius: 5px;
+    padding: 23px 10px;
+    margin: 25px 0;
+
+
+`;
+
+const Texto = styled.p`
+    font-family: Recursive;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.2px;
+    text-align: left;
+
+    color: ${props => props.collor};
+    text-decoration: line-through;
+`

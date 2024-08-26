@@ -1,8 +1,33 @@
+import styled from "styled-components";
+
 export default function Cabecalho() {
     return(
-        <header>
+        <Header>
             <img src="src/assets/logo.png" alt="logo" />
             <h1>ZapRecall</h1>
-        </header>
+        </Header>
     )
 }
+
+const Header = styled.header`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15% 10%;
+
+    font-family: Righteous;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 44.7px;
+    letter-spacing: -0.012em;
+    text-align: center;
+    color: #ffffff;
+
+    img{
+        width: 60px;
+    }
+
+
+
+`

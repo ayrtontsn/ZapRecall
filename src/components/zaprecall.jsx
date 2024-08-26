@@ -1,14 +1,19 @@
 import Cabecalho from "./head.jsx"
 import Corpo from "./body.jsx"
 import Rodape from "./footer.jsx"
+import styled from "styled-components"
 
 export default function ZapRecall() {
     return (
-        <div className="all">
+        <All>
             <Cabecalho />
             <Corpo />
             <Rodape />
-        </div>
+        </All>
 
     )
 }
+
+const All = styled.div`
+    background: #FB6B6B;
+`

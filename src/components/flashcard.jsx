@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components';
 import Answer from './answer.jsx';
 
-export default function Flashcard(index, card, setCarta, setCor, setImagem) {
+export default function Flashcard(index, card, setCarta, concluida, setConcluida) {
     return (
         <ContainerZap>
             <p>{card.question}</p>
-            <img onClick={() => setCarta(Answer(index, card, setCarta, setCor, setImagem))} src="src/assets/seta_virar.png" alt="virar" />
+            <img onClick={() => setCarta(Answer(index, card, setCarta, concluida, setConcluida))} src="src/assets/seta_virar.png" alt="virar" />
         </ContainerZap>
     )
 }

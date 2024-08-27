@@ -1,18 +1,21 @@
-import React from 'react'
 import styled from 'styled-components';
 import {Question} from './zap.jsx';
 
 
-export default function Answer(index, card, setCarta, setCor, setImagem) {
+export default function Answer(index, card, setCarta, concluida, setConcluida) {
     const collors = [
         { cor: "#FF3030", imagem: "src/assets/icone_erro.png", frase: "Não lembrei" },
         { cor: "#FF922E", imagem: "src/assets/icone_quase.png", frase: "Quase não lembrei" },
         { cor: "#2FBE34", imagem: "src/assets/icone_certo.png", frase: "ZAP!" }
     ]
+
     function Botao() {
+
         return(
         collors.map((item,ind) => (
-                <Botaocss key={ind} cor={item.cor} onClick={() => (corImagem(index, card, setCarta, item.cor, setCor ,item.imagem, setImagem))}>
+                <Botaocss key={ind} $cor={item.cor} onClick={() => (
+                    mudarconcluida(index, card, setCarta, item.cor ,item.imagem, setConcluida, concluida)                
+                    )}>
                     {item.frase}
                 </Botaocss>
     )))
@@ -28,10 +31,12 @@ export default function Answer(index, card, setCarta, setCor, setImagem) {
     )
 }
 
-function corImagem(index, card, setCarta, cor, setCor ,imagem, setImagem){
-    setCor(cor)
-    setImagem(imagem)
-    setCarta(Question(index, card, setCarta, cor, setCor ,imagem, setImagem))
+function mudarconcluida(index, card, setCarta, cor ,imagem,setConcluida, concluida){
+    let conc = concluida + 1;
+    setConcluida(conc);
+    console.log(concluida)
+    
+    setCarta(Question(index, card, setCarta, cor ,imagem));
 }
 
 const ContainerZap = styled.div`
@@ -79,7 +84,7 @@ const Botaocss = styled.button`
     height: 35px;
     justify-content: space-between;
 
-    background-color: ${props => props.cor};
+    background-color: ${props => props.$cor};
     border-radius: 5px;
 
     font-family: Recursive;

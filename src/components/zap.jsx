@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components';
 import Flashcard from './flashcard.jsx';
 
-export default function Zap({index, card}) {
-    const [cor, setCor] = React.useState("");
-    const [imagem, setImagem] = React.useState("src/assets/seta_play.png");
+export default function Zap({index, card, setConcluida, concluida}) {
+    const cor = "";
+    const imagem = "src/assets/seta_play.png";
     const [carta, setCarta] = React.useState("");
-    carta===""?setCarta(Question(index, card,setCarta,cor, setCor ,imagem, setImagem)):""
+    !carta && setCarta(Question(index, card,setCarta,cor ,imagem, concluida, setConcluida))
 
     return (
         <>
@@ -14,12 +14,13 @@ export default function Zap({index, card}) {
         </>)
 }
 
-export function Question(index, card, setCarta, cor, setCor ,imagem, setImagem){
+export function Question(index, card, setCarta, cor ,imagem, concluida, setConcluida){
     return (
         <Container>
-            <Texto collor={cor} >Pergunta {index + 1}</Texto>
+            <Texto $collor={cor} >Pergunta {index + 1}</Texto>
             <img
-            onClick={() => cor==="" ? setCarta(Flashcard(index, card, setCarta, setCor, setImagem)) : ""}
+            onClick={() => (
+                !cor && setCarta(Flashcard(index, card, setCarta, concluida, setConcluida)))}
             src={imagem}
             alt="play" />
         </Container>)
@@ -46,6 +47,6 @@ const Texto = styled.p`
     line-height: 19.2px;
     text-align: left;
 
-    color: ${props => props.collor};
-    text-decoration: ${props => props.collor===""?"":"line-through"};
+    color: ${props => props.$collor};
+    text-decoration: ${props => props.$collor && "line-through"};
 `

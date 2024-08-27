@@ -1,9 +1,12 @@
+import CARDS from "./mock.js"
 import styled from "styled-components"
 
-export default function Rodape(){
+export default function Rodape({concluida}){
+    const total = CARDS.length
+    console.log(`no footer: ${concluida}`)
     return(
         <Footer>
-            0/4 CONCLUÍDOS
+            {concluida}/{total} CONCLUÍDOS
         </Footer>
     )
 }

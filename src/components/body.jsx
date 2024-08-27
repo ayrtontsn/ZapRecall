@@ -1,10 +1,12 @@
 import Carta from "./card.jsx"
 import styled from 'styled-components';
 
-export default function Corpo() {
+export default function Corpo({concluida, setConcluida}) {
     return (
         <Body>
-            <Carta />
+            <Carta concluida={concluida}
+            setConcluida={setConcluida}
+            />
         </Body>
     )
 }

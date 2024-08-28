@@ -24,6 +24,12 @@ const Header = styled.header`
     text-align: center;
     color: #ffffff;
 
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+
     img{
         width: 60px;
     }

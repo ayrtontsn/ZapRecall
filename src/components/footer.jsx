@@ -9,7 +9,7 @@ export default function Rodape({concluida}){
     )
 }
 
-const Footer = styled.footer`
+const Footer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;

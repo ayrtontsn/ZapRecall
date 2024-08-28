@@ -18,4 +18,14 @@ export default function ZapRecall() {
 
 const All = styled.div`
     background: #FB6B6B;
+
+    width: 100%;
+
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+
+    
 `

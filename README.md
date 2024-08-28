@@ -1,8 +1,7 @@
-# React + Vite
+# Zap-Recall
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Flashcards são cartões de estudos que contém uma pergunta/afirmação na frente e uma resposta atrás. A ideia é ler a pergunta ou afirmação e tentar lembrar da reposta. Isso te ajuda a saber quais conteúdos você tem mais frescos na memória e quais precisam de uma revisão.
+- Quando lembramos instantaneamente de um flashcard, tivemos um "Zap!"⚡
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Link do zap-recall em funcionamento:
+https://zap-recall-chi-lac.vercel.app/

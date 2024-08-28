@@ -6,7 +6,7 @@ export default function Flashcard(index, card, setCarta, setConcluida) {
     return (
         <ContainerZap>
             <p>{card.question}</p>
-            <img onClick={() => setCarta(Answer(index, card, setCarta, setConcluida))} src="src/assets/seta_virar.png" alt="virar" />
+            <img onClick={() => setCarta(Answer(index, card, setCarta, setConcluida))} src="public/assets/seta_virar.png" alt="virar" />
         </ContainerZap>
     )
 }

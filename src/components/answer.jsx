@@ -4,9 +4,9 @@ import {Question} from './zap.jsx';
 
 export default function Answer(index, card, setCarta, setConcluida) {
     const collors = [
-        { cor: "#FF3030", imagem: "src/assets/icone_erro.png", frase: "Não lembrei" },
-        { cor: "#FF922E", imagem: "src/assets/icone_quase.png", frase: "Quase não lembrei" },
-        { cor: "#2FBE34", imagem: "src/assets/icone_certo.png", frase: "ZAP!" }
+        { cor: "#FF3030", imagem: "public/assets/icone_erro.png", frase: "Não lembrei" },
+        { cor: "#FF922E", imagem: "public/assets/icone_quase.png", frase: "Quase não lembrei" },
+        { cor: "#2FBE34", imagem: "public/assets/icone_certo.png", frase: "ZAP!" }
     ]
 
     function Botao() {

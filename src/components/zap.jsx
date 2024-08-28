@@ -4,7 +4,7 @@ import Flashcard from './flashcard.jsx';
 
 export default function Zap({index, card, setConcluida, concluida}) {
     const cor = "";
-    const imagem = "src/assets/seta_play.png";
+    const imagem = "public/assets/seta_play.png";
     const [carta, setCarta] = React.useState("");
     !carta && setCarta(Question(index, card,setCarta,cor ,imagem, setConcluida))
 

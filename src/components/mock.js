@@ -1,12 +1,12 @@
 const CARDS = [
-    { question: "O que é JSX?", answer: "Uma extensão da linguagem JavaScript" },
-    { question: "O React é __", answer: "Uma biblioteca JavaScript para construção de interfaces" },
-    { question: "Componentes devem iniciar com __", answer: "Letra maiúscula" },
-    { question: "Podemos colocar __ dentro do JSX", answer: "expressões" },
-    { question: "O ReactDOM nos ajuda __", answer: "Interagindo com a DOM para colocar componentes React na mesma" },
-    { question: "Usamos o npm para __", answer: "Gerenciar os pacotes necessários e suas dependências" },
-    { question: "Usamos props para __", answer: "Passar diferentes informações para componentes" },
-    { question: "Usamos estado (state) para __", answer: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" }
+    { question: "Qual é o nome da escola de magia onde Harry Potter estuda?", answer: "Hogwarts" },
+    { question: "Qual é o nome do melhor amigo de Harry Potter, que é um bruxo de cabelos ruivos?", answer: "Ron Weasley" },
+    { question: "Qual é o nome da melhor amiga de Harry Potter, que é conhecida por sua inteligência?", answer: "Hermione Granger" },
+    { question: "Quem é o vilão principal da série?", answer: "Lord Voldemort" },
+    { question: "Qual é o nome do diretor da escola de Hogwarts durante a maior parte da série?", answer: "Albus Dumbledore" },
+    { question: "Qual é o nome da pedra mágica que tem o poder de conceder imortalidade?", answer: "A Pedra Filosofal" },
+    { question: "Qual é o nome do jogo mágico que é jogado em vassouras voadoras?", answer: "Quadribol" },
+    { question: "Quais são as quatro casas em que os alunos podem fazer parte em Hogwarts", answer: "Grifinória, Lufa-Lufa, Corvinal e Sonserina" }
     ];
 
 export default CARDS;

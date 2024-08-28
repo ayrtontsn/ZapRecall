@@ -6,7 +6,7 @@ export default function Zap({index, card, setConcluida, concluida}) {
     const cor = "";
     const imagem = "src/assets/seta_play.png";
     const [carta, setCarta] = React.useState("");
-    !carta && setCarta(Question(index, card,setCarta,cor ,imagem, concluida, setConcluida))
+    !carta && setCarta(Question(index, card,setCarta,cor ,imagem, setConcluida))
 
     return (
         <>
@@ -14,13 +14,13 @@ export default function Zap({index, card, setConcluida, concluida}) {
         </>)
 }
 
-export function Question(index, card, setCarta, cor ,imagem, concluida, setConcluida){
+export function Question(index, card, setCarta, cor ,imagem, setConcluida){
     return (
         <Container>
             <Texto $collor={cor} >Pergunta {index + 1}</Texto>
             <img
             onClick={() => (
-                !cor && setCarta(Flashcard(index, card, setCarta, concluida, setConcluida)))}
+                !cor && setCarta(Flashcard(index, card, setCarta, setConcluida)))}
             src={imagem}
             alt="play" />
         </Container>)

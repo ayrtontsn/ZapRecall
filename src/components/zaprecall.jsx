@@ -6,14 +6,11 @@ import styled from "styled-components"
 
 export default function ZapRecall() {
     const [concluida,setConcluida] = React.useState(0);
-    console.log(`no zaprecall: ${concluida}`)
 
     return (
         <All>
             <Cabecalho />
-            <Corpo concluida={concluida}
-            setConcluida={setConcluida}
-            />
+            <Corpo setConcluida={setConcluida} />
             <Rodape concluida={concluida}/>
         </All>
     )

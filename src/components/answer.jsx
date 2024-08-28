@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {Question} from './zap.jsx';
 
 
-export default function Answer(index, card, setCarta, concluida, setConcluida) {
+export default function Answer(index, card, setCarta, setConcluida) {
     const collors = [
         { cor: "#FF3030", imagem: "src/assets/icone_erro.png", frase: "Não lembrei" },
         { cor: "#FF922E", imagem: "src/assets/icone_quase.png", frase: "Quase não lembrei" },
@@ -14,7 +14,7 @@ export default function Answer(index, card, setCarta, concluida, setConcluida) {
         return(
         collors.map((item,ind) => (
                 <Botaocss key={ind} $cor={item.cor} onClick={() => (
-                    mudarconcluida(index, card, setCarta, item.cor ,item.imagem, setConcluida, concluida)                
+                    mudarconcluida(index, card, setCarta, item.cor ,item.imagem, setConcluida)                
                     )}>
                     {item.frase}
                 </Botaocss>
@@ -31,12 +31,13 @@ export default function Answer(index, card, setCarta, concluida, setConcluida) {
     )
 }
 
-function mudarconcluida(index, card, setCarta, cor ,imagem,setConcluida, concluida){
-    let conc = concluida + 1;
-    setConcluida(conc);
-    console.log(concluida)
+function mudarconcluida(index, card, setCarta, cor, imagem, setConcluida) {
     
-    setCarta(Question(index, card, setCarta, cor ,imagem));
+    setConcluida(antes => {
+        const conc = antes + 1;
+        return conc;
+    });
+    setCarta(Question(index, card, setCarta, cor, imagem));
 }
 
 const ContainerZap = styled.div`
